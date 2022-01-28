@@ -8,18 +8,18 @@
         #Hint3: THis method will help you: https://www.w3schools.com/python/ref_string_strip.asp
 
 
-with open("Input\\Letters\\starting_letter.txt", mode="r") as file:
+with open("./Input/Letters/starting_letter.txt", mode="r") as file:
     letter = file.read()
 
 print(letter)
 
-with open("Input\\Names\\invited_names.txt", mode="r") as file:
+with open("./Input/Names/invited_names.txt", mode="r") as file:
     names = file.readlines()
 
 for name in names:
     name = name.strip()
     output = letter.replace("[name]", name)
-    with open(F"Output\\ReadyToSend\\{name}.txt", mode="w") as file:
+    with open(F"./Output/ReadyToSend/letter_for_{name}.txt", mode="w") as file:
         file.write(output)
 
 
